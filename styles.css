@@ -9,7 +9,7 @@
   Ejemplo: --acento: #FF4FA3;
 */
 :root {
-  --acento: #FF9F1C;
+  --acento: #B98CFF;
 }
 
 /* A partir de aquí no necesitas cambiar nada, pero puedes explorar */
@@ -469,6 +469,74 @@ body {
 .encendida .boton {
   background: transparent;
   color: var(--acento);
+}
+
+/* Linux, que aparece junto a la vela chupándose la patita */
+
+.gatito {
+  position: relative;
+  z-index: 4;
+  width: clamp(84px, 22vw, 124px);
+  margin-bottom: -6px;
+  filter: drop-shadow(0 0 6px rgb(251 235 211 / 0.25));
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 1s ease, transform 1s ease, visibility 1s;
+}
+
+.gatito-pelo { fill: #555a65; }
+.gatito-oreja { fill: #c98a9a; }
+.gatito-calcetin { fill: #d9d6d0; }
+.gatito-brazo { fill: #646a76; stroke: #2e3138; stroke-width: 1.5; stroke-linejoin: round; }
+.gatito-palma { stroke: #2e3138; stroke-width: 1.2; }
+.gatito-dedos { fill: none; stroke: #9a948c; stroke-width: 1; stroke-linecap: round; }
+.gatito-nariz { fill: #e3a0ad; }
+.gatito-lengua { fill: #ff8fa8; transform-box: fill-box; transform-origin: center; scale: 0; }
+.gatito-cola { fill: none; stroke: #555a65; stroke-width: 9; stroke-linecap: round; }
+.gatito-ojo { fill: none; stroke: #f2c14e; stroke-width: 2.5; stroke-linecap: round; }
+.gatito-bigote { fill: none; stroke: rgb(251 235 211 / 0.5); stroke-width: 1; }
+
+.gatito-pata {
+  transform-box: view-box;
+  transform-origin: 44px 104px;
+}
+
+.gatito-cabeza {
+  transform-box: view-box;
+  transform-origin: 60px 76px;
+}
+
+.encendida .gatito {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0.8s;
+}
+
+.encendida .gatito-pata { animation: chupar 0.9s ease-in-out 1.6s infinite; }
+.encendida .gatito-cabeza { animation: arrullo 0.9s ease-in-out 1.6s infinite; }
+.encendida .gatito-lengua { animation: lamer 0.9s ease-in-out 1.6s infinite; }
+.encendida .gatito-cola { animation: mecerse-cola 3s ease-in-out 1.6s infinite; transform-origin: 104px 84px; transform-box: view-box; }
+
+@keyframes chupar {
+  0%, 100% { rotate: 0deg; translate: 0 0; }
+  50% { rotate: -7deg; translate: 0 2px; }
+}
+
+@keyframes arrullo {
+  0%, 100% { rotate: 0deg; translate: 0 0; }
+  50% { rotate: 3deg; translate: 0 1.5px; }
+}
+
+@keyframes lamer {
+  0%, 40%, 100% { scale: 0; }
+  60%, 80% { scale: 1; }
+}
+
+@keyframes mecerse-cola {
+  0%, 100% { rotate: 0deg; }
+  50% { rotate: 8deg; }
 }
 
 @keyframes parpadeo {
